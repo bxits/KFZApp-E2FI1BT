@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KFZApp.Views"
         mc:Ignorable="d"
+        xmlns:vm ="clr-namespace:KFZApp.ViewModels"
         Title="MainView" Height="450" Width="800">
-    <Grid>
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+	<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -17,6 +21,16 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView  Grid.Row="0" Grid.Column="0"></ListView>        
+        <ListView ItemsSource="{Binding AlleKFZs, Mode=OneWay}"
+                  Grid.Row="0" Grid.Column="0" Background="AliceBlue">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Kennzeichen}"/>
+                        <Label Content="{Binding Typ}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListView>        
     </Grid>
 </Window>

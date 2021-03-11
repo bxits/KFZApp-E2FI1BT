@@ -9,6 +9,6 @@ namespace KFZApp.Model
     public class KFZ
     {
         public string Kennzeichen { get; set; }
-
+        public string Typ { get; set; }
     }
 }

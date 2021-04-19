@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:KFZApp.Views"
         mc:Ignorable="d"
         xmlns:vm ="clr-namespace:KFZApp.ViewModels"
-        Title="MainView" Height="450" Width="800">
+        Title="MainView" Height="450" Width="500">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="0.3*" ></ColumnDefinition>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,15 +22,25 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding AlleKFZs}"  Grid.Row="0" Grid.Column="0" Background="AliceBlue">
+        <ListView ItemsSource="{Binding AlleKFZs}"  Grid.Row="0" Grid.Column="0" Background="AliceBlue"
+                  SelectedItem="{Binding SelectedKFZ}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Text="{Binding Kennzeichen}"></TextBox>
-                        <Label Content="{Binding Typ}"></Label>
+                        <CheckBox></CheckBox>
+                        <Label Content="{Binding Kennzeichen}" Width="100"></Label>
+                        <Label Content="{Binding Leistung}" Width="50"></Label>
+                        <Label Content="{Binding Typ}" Width="100"></Label>
+                        <Label Content="{Binding FahrgestellNr}"></Label>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListView>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" >
+            <TextBox Text="{Binding SelectedKFZ.Kennzeichen}" ></TextBox>
+            <TextBox Text="{Binding SelectedKFZ.Leistung}" ></TextBox>
+            <TextBox Text="{Binding SelectedKFZ.Typ}" ></TextBox>
+            <TextBox Text="{Binding SelectedKFZ.FahrgestellNr}"></TextBox>
+        </StackPanel>
     </Grid>
 </Window>

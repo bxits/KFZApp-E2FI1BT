@@ -10,5 +10,8 @@ namespace KFZApp.Model
     {
         public string Kennzeichen { get; set; }
         public string Typ { get; set; }
+        public int Leistung { get; set; }
+        public string FahrgestellNr { get; set; }
+        
     }
 }

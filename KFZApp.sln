@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFZApp", "KFZApp\KFZApp.csproj", "{6A7FE300-5DC8-45F8-AEAE-D09D774CCE78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{16C6296F-8E24-4417-8367-A04826183CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTypes", "CommonTypes\CommonTypes.csproj", "{ED0A946A-C4C4-4BC2-A46B-C61109C66020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6A7FE300-5DC8-45F8-AEAE-D09D774CCE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A7FE300-5DC8-45F8-AEAE-D09D774CCE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A7FE300-5DC8-45F8-AEAE-D09D774CCE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C6296F-8E24-4417-8367-A04826183CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C6296F-8E24-4417-8367-A04826183CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C6296F-8E24-4417-8367-A04826183CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C6296F-8E24-4417-8367-A04826183CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0A946A-C4C4-4BC2-A46B-C61109C66020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0A946A-C4C4-4BC2-A46B-C61109C66020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0A946A-C4C4-4BC2-A46B-C61109C66020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0A946A-C4C4-4BC2-A46B-C61109C66020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

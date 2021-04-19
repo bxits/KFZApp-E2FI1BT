@@ -23,5 +23,7 @@ namespace KFZApp.Views
         {
             InitializeComponent();
         }
+
+       
     }
 }

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:KFZApp.Views"
         mc:Ignorable="d"
         xmlns:vm ="clr-namespace:KFZApp.ViewModels"
-        Title="MainView" Height="450" Width="500">
+        Title="MainView" Height="250" Width="500">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
-
+    <Viewbox>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition ></ColumnDefinition>
@@ -20,7 +20,7 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+          
         </Grid.RowDefinitions>
         <ListView ItemsSource="{Binding AlleKFZs}"  Grid.Row="0" Grid.Column="0" Background="AliceBlue"
                   SelectedItem="{Binding SelectedKFZ}">
@@ -42,5 +42,10 @@
             <TextBox Text="{Binding SelectedKFZ.Typ}" ></TextBox>
             <TextBox Text="{Binding SelectedKFZ.FahrgestellNr}"></TextBox>
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button Command="{Binding SaveAllKFZCommand}" >Save All KFZs</Button>
+            <Button Content="Save KFZ-Details" Margin="0,0,-0.4,0"/>
+        </StackPanel>
     </Grid>
+    </Viewbox>
 </Window>

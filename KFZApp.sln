@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Zubehör", "Zubehör", "{E279915A-EE05-422E-ABD0-8CEC69E2D7D9}"
 	ProjectSection(SolutionItems) = preProject
 		Zubehör\CommandHelper.dll = Zubehör\CommandHelper.dll
+		Zubehör\kfzka.sql = Zubehör\kfzka.sql
 		Zubehör\MySql.Data.dll = Zubehör\MySql.Data.dll
 	EndProjectSection
 EndProject

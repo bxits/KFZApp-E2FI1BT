@@ -22,15 +22,28 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <ListView ItemsSource="{Binding AlleKFZs, Mode=OneWay}"
-                  Grid.Row="0" Grid.Column="0" Background="AliceBlue">
+                  Grid.Row="0" Grid.Column="0" Background="AliceBlue" SelectedItem="{Binding SelectedKfz}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding Kennzeichen}"/>
+                        <CheckBox Margin="0,7,0,0" x:Name="CheckBox"></CheckBox>
+	                    <Label Content="{Binding Kennzeichen}"/>
                         <Label Content="{Binding Typ}"/>
+                        <Label Content="{Binding Leistung}"/>
+                        <Label Content="{Binding FahrgestellNummer}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-        </ListView>        
+        </ListView>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+			<TextBox Text="{Binding SelectedKfz.Kennzeichen}"></TextBox>
+			<TextBox Text="{Binding SelectedKfz.Leistung}"></TextBox>
+			<TextBox Text="{Binding SelectedKfz.Typ}"></TextBox>
+			<TextBox Text="{Binding SelectedKfz.FahrgestellNummer}"></TextBox>
+        </StackPanel>
+		<StackPanel Grid.Row="2" Grid.Column="1">
+			<Button Command="{Binding SaveAllKFZCommand}" Height="50">Save All KFZs</Button>
+			<Button Command="{Binding SaveDetailKFZCommand}" Height="50">Save Details</Button>
+		</StackPanel>
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
 ﻿using LinqToDB;
 using Model;
 
-namespace BusinessLogic.DataAccess
+namespace DataAccess
 {
 	public class DbDev : LinqToDB.Data.DataConnection
 	{

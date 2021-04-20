@@ -4,7 +4,7 @@ using System.ComponentModel; //Brauchen wir für INotifyPropertyChanged
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
-using BusinessLogic.DataAccess;
+using BusinessLogic;
 using CommandHelper;
 using Model;
 

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Model;
+using DataAccess;
 
-namespace BusinessLogic.DataAccess
+namespace BusinessLogic
 {
 	public class BaseLogic
 	{

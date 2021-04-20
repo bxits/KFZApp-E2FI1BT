@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using LinqToDB;
 using Model;
 
-namespace BusinessLogic.DataAccess
+namespace DataAccess
 {
-	class KfzDataAccess
+	public class KfzDataAccess
 	{
 		public List<KFZ> FilterKFZ()
 		{

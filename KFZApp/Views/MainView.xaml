@@ -11,41 +11,44 @@
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
     <Viewbox>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition Width="0.3*" ></ColumnDefinition>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="0.3*" ></ColumnDefinition>
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-          
-        </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding AlleKFZs}"  Grid.Row="0" Grid.Column="0" Background="AliceBlue"
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <ListView ItemsSource="{Binding AlleKFZs}"  Grid.Row="0" Grid.Column="0" Background="AliceBlue"
                   SelectedItem="{Binding SelectedKFZ}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox></CheckBox>
-                        <Label Content="{Binding Kennzeichen}" Width="100"></Label>
-                        <Label Content="{Binding Leistung}" Width="50"></Label>
-                        <Label Content="{Binding Typ}" Width="100"></Label>
-                        <Label Content="{Binding FahrgestellNr}"></Label>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListView>
-        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" >
-            <TextBox Text="{Binding SelectedKFZ.Kennzeichen}" ></TextBox>
-            <TextBox Text="{Binding SelectedKFZ.Leistung}" ></TextBox>
-            <TextBox Text="{Binding SelectedKFZ.Typ}" ></TextBox>
-            <TextBox Text="{Binding SelectedKFZ.FahrgestellNr}"></TextBox>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Button Command="{Binding SaveAllKFZCommand}" >Save All KFZs</Button>
-            <Button Content="Save KFZ-Details" Margin="0,0,-0.4,0"/>
-        </StackPanel>
-    </Grid>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox></CheckBox>
+                            <Label Content="{Binding Kennzeichen}" Width="100"></Label>
+                            <Label Content="{Binding Leistung}" Width="50"></Label>
+                            <Label Content="{Binding Typ}" Width="100"></Label>
+                            <Label Content="{Binding FahrgestellNr}"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListView>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" >
+                <TextBox Text="{Binding SelectedKFZ.Kennzeichen}" ></TextBox>
+                <TextBox Text="{Binding SelectedKFZ.Leistung}" ></TextBox>
+                <TextBox Text="{Binding SelectedKFZ.Typ}" ></TextBox>
+                <TextBox Text="{Binding SelectedKFZ.FahrgestellNr}"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Button Command="{Binding SaveAllKFZCommand}" >Save All KFZs</Button>
+                <Button Content="Save KFZ-Details" Command="{Binding SaveKFZDetailsCommand}"/>
+                <Button Content="Alle KFZs holen" Command="{Binding GetAllKFZCommand}" />
+                <Button Content="KFZ löschen" Command="{Binding DeleteKFZCommand}" />
+            
+            </StackPanel>
+        </Grid>
     </Viewbox>
 </Window>

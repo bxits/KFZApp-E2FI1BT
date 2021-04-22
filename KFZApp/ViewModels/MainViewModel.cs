@@ -16,8 +16,22 @@ namespace KFZApp.ViewModels
         public List<KFZ> AlleKFZs { get; set; }
         private KFZ _selectedKFZ;
         private ICommand _saveAllKFZCommand;
+        private ICommand _getAllKFZCommand;
+        private ICommand _saveKFZDetailsCommand;
 
-        
+        public ICommand SaveKFZDetailsCommand
+        {
+            get
+            {
+                if (_saveKFZDetailsCommand == null)
+                {
+                    _saveKFZDetailsCommand = new RelayCommand(c => SaveKFZDetails());
+                }
+                return _saveKFZDetailsCommand;
+            }
+
+        }
+
         public ICommand SaveAllKFZCommand
         {
             //Damit der Button-Click-Event später zu der Methode
@@ -31,6 +45,18 @@ namespace KFZApp.ViewModels
                     _saveAllKFZCommand = new RelayCommand(c => SaveAllKFZ());
                 }
                 return _saveAllKFZCommand;
+            }
+
+        }
+
+        public ICommand GetAllKFZCommand {
+            get
+            {
+                if (_getAllKFZCommand == null)
+                {
+                    _getAllKFZCommand = new RelayCommand(c => GetAllKFZ());
+                }
+                return _getAllKFZCommand;
             }
 
         }
@@ -70,6 +96,19 @@ namespace KFZApp.ViewModels
                 da.SaveKFZ(kfz);
             }
 
+        }
+
+        private void GetAllKFZ()
+        {
+            DataAccess.DataAccess da = new DataAccess.DataAccess();
+
+            AlleKFZs = da.GetAllKFZ();
+        }
+
+        private void SaveKFZDetails()
+        {
+            DataAccess.DataAccess da = new DataAccess.DataAccess();
+            da.SaveKFZDetails(SelectedKFZ);
         }
     }
 }

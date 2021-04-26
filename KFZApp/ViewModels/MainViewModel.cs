@@ -93,8 +93,9 @@ namespace KFZApp.ViewModels
 		private void DeleteDetailKFZ()
 		{
 			_baseLogic.DeleteKFZ(SelectedKfz);
-
 			MessageBox.Show($"{SelectedKfz.Kennzeichen} Gelöscht");
+			AlleKFZs = _baseLogic.FilterKFZ();
+			NotifyPropertyChanged(nameof(AlleKFZs));
 		}
 
 

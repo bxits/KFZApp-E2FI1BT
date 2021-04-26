@@ -16,6 +16,7 @@ namespace KFZApp.ViewModels
 		private KFZ _selectedKfz;
 		private ICommand _saveAllKfzCommand;
 		private ICommand _saveDetailKfzCommand;
+		private ICommand _deleteDetailKfzCommand;
 		private BaseLogic _baseLogic;
 
 		public MainViewModel()
@@ -70,6 +71,14 @@ namespace KFZApp.ViewModels
 			}
 		}
 
+		public ICommand DeleteDetailKFZCommand
+		{
+			get
+			{
+				return _deleteDetailKfzCommand ?? (_deleteDetailKfzCommand = new RelayCommand(c => DeleteDetailKFZ()));
+			}
+		}
+
 		private void SaveAllKFZ()
 		{
 			_baseLogic.SaveAllKFZ(AlleKFZs);
@@ -80,6 +89,14 @@ namespace KFZApp.ViewModels
 			_baseLogic.SaveSingleKFZ(SelectedKfz);
 			MessageBox.Show($"{SelectedKfz.Kennzeichen} Gespeichert");
 		}
+
+		private void DeleteDetailKFZ()
+		{
+			_baseLogic.DeleteKFZ(SelectedKfz);
+
+			MessageBox.Show($"{SelectedKfz.Kennzeichen} Gelöscht");
+		}
+
 
 		private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
 		{

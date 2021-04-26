@@ -51,5 +51,13 @@ namespace DataAccess
 				}
 			}
 		}
+
+		public void DeleteKFZ(KFZ selectedKfz)
+		{
+			using (var db = new DbDev())
+			{
+				db.Delete(selectedKfz);
+			}
+		}
 	}
 }

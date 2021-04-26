@@ -25,5 +25,10 @@ namespace BusinessLogic
 		{
 			return _dataAccess.FilterKFZ();
 		}
+
+		public void DeleteKFZ(KFZ selectedKfz)
+		{
+			_dataAccess.DeleteKFZ(selectedKfz);
+		}
 	}
 }

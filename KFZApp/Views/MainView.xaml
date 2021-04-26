@@ -42,8 +42,9 @@
 			<TextBox Text="{Binding SelectedKfz.FahrgestellNummer}"></TextBox>
         </StackPanel>
 		<StackPanel Grid.Row="2" Grid.Column="1">
-			<Button Command="{Binding SaveAllKFZCommand}" Height="50">Save All KFZs</Button>
-			<Button Command="{Binding SaveDetailKFZCommand}" Height="50">Save Details</Button>
+			<Button Command="{Binding SaveAllKFZCommand}" Height="30">Save All KFZs</Button>
+			<Button Command="{Binding SaveDetailKFZCommand}" Height="30">Save Details</Button>
+			<Button Command="{Binding DeleteDetailKFZCommand}" Height="30">Delete Selected</Button>
 		</StackPanel>
     </Grid>
 </Window>
